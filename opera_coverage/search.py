@@ -133,9 +133,7 @@ def get_sensor_cadence(dfs: List[gpd.GeoDataFrame]) -> gpd.GeoDataFrame:
     Returns:
         gpd.GeoDataFrame: dataframe with all sensor acquisitions and their timedeltas
     """
-    coverage_df = gpd.GeoDataFrame(pd.concat([dfs[0],dfs[1]]))
-    for i in range(len(dfs) - 2):
-        coverage_df = gpd.GeoDataFrame(pd.concat([coverage_df,dfs[i + 2]]))
+    coverage_df = pd.concat(dfs)
     coverage_df.sort_values(by=['startTime'], inplace=True)
     coverage_df['cadence'] = coverage_df.startTime.diff()
     coverage_df.reset_index(drop=True,inplace=True)
