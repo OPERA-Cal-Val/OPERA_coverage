@@ -74,56 +74,6 @@ def asf_search(aoi: Polygon, date: datetime = None):
     
     return results
 
-# # find next acquisition date
-# def acq_search(sensor_name: str, aoi: Polygon, date: datetime):
-    
-#     # put arbitrary hard stop at 3 searches (15 days)
-#     for rep in range(3):
-
-#         if 'landsat8' in sensor_name.lower():
-#             results = hls_search('landsat8', aoi, [date + timedelta(days = 5 * rep), date + timedelta(days = 5 * (rep + 1))])
-#         elif 'sentinel1' in sensor_name.lower():
-#             results = asf_search(aoi, [date + timedelta(days = 5 * rep), date + timedelta(days = 5 * (rep + 1))])
-#         elif 'sentinel2' in sensor_name.lower():
-#             results = hls_search('sentinel2', aoi, [date + timedelta(days = 5 * rep), date + timedelta(days = 5 * (rep + 1))])
-            
-#         # print(len(results))
-#         if len(results) > 0:
-#             if 'landsat8' in sensor_name.lower():
-#                 df = f.format_results_for_hls(results,'landsat8')
-#             elif 'sentinel2' in sensor_name.lower():
-#                 df = f.format_results_for_hls(results,'sentinel2')
-#             elif 'sentinel1' in sensor_name.lower():
-#                 df = f.format_results_for_sent1(results)
-#             break
-    
-#     # extract time of next acquisition
-#     if not df.empty:
-#         next_acq = df.startTime[0]
-
-#     else:
-#         next_acq = 'Search yielded no results'
-    
-#     return next_acq
-
-# # calculate cadence
-# def get_cadence(results: gpd.GeoDataFrame):
-    
-#     cadence = ''
-#     if len(results) == 0:
-#         cadence = 'There is no coverage during this time'
-
-#     else:
-#         if len(results) == 1:
-#             cadence = 'Only one acquisition on ' + str(results.startTime[0])
-
-#         else:
-#             cadence = []
-#             for i in range(len(results) - 1):
-#                 cadence.append(str(f.asfsearch2datetime(str(results.startTime[i + 1])) - f.asfsearch2datetime(str(results.startTime[i]))))
-        
-#     return cadence
-
 def get_sensor_cadence(dfs: List[gpd.GeoDataFrame]) -> gpd.GeoDataFrame:
     """Return dataframe with all sensor acquisitions and their timedeltas
 
