@@ -46,15 +46,9 @@ To display the heatmap, one can specify <code>column='av_cad_days',legend=True,l
 
 # Known issues
 
-/*:
   - Northern Russia coverage: since single look complex (SLC) is specified for ASF search in opera_coverage/search.py asf_search(), there is no coverage over northern Russia. Other result formats exist for that region.
-
-*/
 
 # Useful links
 
-/*:
   - [ASF search](https://search.asf.alaska.edu/#/)
   - [GeoPandas documentation](https://geopandas.org/en/stable/docs/user_guide.html)
-
-*/
