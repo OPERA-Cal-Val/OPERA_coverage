@@ -22,7 +22,9 @@ This function queries the DAACs (ASF search and HLS search) for the user-specifi
 ```
 df = get_coverage(sensor_list, aoi, daterange)
 ```
-where sensor_list is a list with any number of sensors from ['sentinel1','sentinel2','landsat8_9'], aoi is formatted as a shapely Polygon, and daterange is a list of length 2 containing the start and end datetime.
+where sensor_list is a list with any number of sensors from ['sentinel1','sentinel2','landsat8_9'], aoi is formatted as a shapely Polygon, and daterange is a list of length 2 containing the start and end datetime. An example output dataframe is shown below:
+
+<img width="982" alt="Screen Shot 2022-10-06 at 9 04 38 AM" src="https://user-images.githubusercontent.com/48765984/194362964-3b1de065-7250-43db-9071-39c01f7e79cc.png">
 
 Please refer to notebooks/Basic Demo.ipynb for an example workflow of the below two functions.
 
