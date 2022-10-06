@@ -29,7 +29,7 @@ def format_results_for_sent1(results: list) -> gpd.GeoDataFrame:
     df = gpd.GeoDataFrame(df, geometry=geometry, crs=CRS.from_epsg(4326))
 
     if df.empty:
-        warn('Sentinel-1 dataframe is empty! Check inputs.')
+        # warn('Sentinel-1 dataframe is empty! Check inputs.')
         return df
 
     df['startTime'] = pd.to_datetime(df.startTime).dt.tz_convert('UTC')
@@ -58,10 +58,10 @@ def format_results_for_hls(results: list, sensor: str) -> gpd.GeoDataFrame:
     df = gpd.GeoDataFrame(df, geometry=geometry, crs=CRS.from_epsg(4326))
 
     if df.empty:
-        if 'sentinel2' in sensor.lower():
-            warn('Sentinel-2 dataframe is empty! Check inputs.')
-        elif 'landsat8' in sensor.lower():
-            warn('Landsat-8 dataframe is empty! Check inputs.')
+        # if 'sentinel2' in sensor.lower():
+        #     warn('Sentinel-2 dataframe is empty! Check inputs.')
+        # elif 'landsat8_9' in sensor.lower():
+        #     warn('Landsat-8_9 dataframe is empty! Check inputs.')
         return df
     
     df['startTime'] = pd.to_datetime(df.start_datetime.replace('Z',''))
@@ -81,8 +81,9 @@ def format_results_for_hls(results: list, sensor: str) -> gpd.GeoDataFrame:
     return df
 
 # convert a shapely object (point or polygon) to geodataframe
-def shape2gdf(shape, filename = None, to_file = True) -> gpd.GeoDataFrame:
+def shape2gdf(shape, label, to_file = False, filename = None, ) -> gpd.GeoDataFrame:
     data = {}
+    data['label'] = label
     data['coordinates'] = [shape.wkt]
     data['coordinates'] = gpd.GeoSeries.from_wkt(data['coordinates'])
     df = pd.DataFrame(data)

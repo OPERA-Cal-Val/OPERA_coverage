@@ -21,9 +21,9 @@ def get_coverage(sensor: List[str], aoi: Polygon, date: List[datetime] = None) -
     
     for sensor_name in sensor:
         
-        if 'landsat8' in sensor_name.lower():
-            results = s.hls_search('landsat8', aoi, date)
-            df = f.format_results_for_hls(results,'landsat8')
+        if 'landsat8_9' in sensor_name.lower():
+            results = s.hls_search('landsat8_9', aoi, date)
+            df = f.format_results_for_hls(results,'landsat8_9')
         elif 'sentinel1' in sensor_name.lower():
             results = s.asf_search(aoi, date)
             df = f.format_results_for_sent1(results)

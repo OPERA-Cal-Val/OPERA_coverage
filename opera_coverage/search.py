@@ -23,7 +23,7 @@ def hls_search(sensor: str, aoi: Polygon, date: List[datetime] = None) -> list:
     
     if 'sentinel2' in sensor.lower():
         hls_collections = ['HLSS30.v2.0']
-    elif 'landsat8' in sensor.lower():
+    elif 'landsat8_9' in sensor.lower():
         hls_collections = ['HLSL30.v2.0']
     
     if date == None:
