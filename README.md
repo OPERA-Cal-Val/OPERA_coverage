@@ -13,11 +13,22 @@ python -m ipykernel install --user --name opera_coverage
 
 # Usage
 
-Please refer to notebooks/Basic Demo.ipynb for an example workflow.
+Please refer to notebooks/Demo.ipynb for example.
+
+## get_coverage function
+
+This function queries the DAACs (ASF search and HLS search) for the user-specified sensors, processes duplicate search results appropriately, then sorts and returns the results as a GeoPandas dataframe. An example function call is:
+
+```
+df = get_coverage(sensor_list, aoi, daterange)
+```
+where sensor_list is a list with any number of sensors from ['sentinel1','sentinel2','landsat8_9'], aoi is formatted as a shapely Polygon, and daterange is a list of length 2 containing the start and end datetime.
+
+Please refer to notebooks/Basic Demo.ipynb for an example workflow of the below two functions.
 
 ## get_area_coverage function
 
-This is the main function that queries the DAACs (ASF search and HLS search), gets rid of duplicate search results, then sorts and returns the results as a GeoPandas dataframe. An example function call is:
+This function is used when the user intends to run multiple searches over a broad area of interest. It queries the DAACs (ASF search and HLS search) for all available sensors in this package, processes duplicate search results appropriately, then sorts and returns the results as a GeoPandas dataframe. An example function call is:
 
 ```
 df = get_area_coverage(aoi, daterange, x_res = 1, y_res = 1, radius = 0.1)
