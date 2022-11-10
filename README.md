@@ -65,12 +65,11 @@ where all_sensors_df is the GeoDataFrame with all sensor acquisitions, sensor_li
 
 To display the heatmap, one can specify <code>column='av_cad_days',legend=True,legend_kwds={'label': "Sensor cadence (# of days)"}</code> for the plot to include cadence as a colorbar. An example plot is shown below:
 
-<img width="606" alt="Screen Shot 2022-09-22 at 9 03 51 AM" src="https://user-images.githubusercontent.com/48765984/191796715-20cbd3c4-2434-422e-8667-2fa964d51606.png">
+<img width="604" alt="Screen Shot 2022-11-10 at 9 00 24 AM" src="https://user-images.githubusercontent.com/48765984/201159134-9304f545-6506-49b6-9672-222eb17b2425.png">
 
 # Known issues
 
   - Northern Russia coverage: since single look complex (SLC) is specified for ASF search in opera_coverage/search.py asf_search(), there is no coverage over northern Russia. Other result formats exist for that region.
-  - Random boxes get no data when querying a broad area of interest. The boxes without data differ every time.
 
 # Useful links
 
