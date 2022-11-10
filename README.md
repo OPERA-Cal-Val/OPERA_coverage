@@ -15,7 +15,7 @@ pip install .
 
 # Usage
 
-Please refer to notebooks/Demo.ipynb for example.
+Please refer to [notebooks/Demo.ipynb](https://github.com/OPERA-Cal-Val/opera_coverage/blob/main/notebooks/Demo.ipynb) for example.
 
 ## get_coverage
 
@@ -28,9 +28,9 @@ where sensor_list is a list with any number of sensors from ['sentinel1','sentin
 
 <img width="982" alt="Screen Shot 2022-10-06 at 9 04 38 AM" src="https://user-images.githubusercontent.com/48765984/194362964-3b1de065-7250-43db-9071-39c01f7e79cc.png">
 
-Please refer to notebooks/Basic Demo.ipynb for an example workflow of the below two functions.
+<!-- Please refer to notebooks/Basic Demo.ipynb for an example workflow of the below two functions.
 
-<!-- ## get_area_coverage
+## get_area_coverage
 
 This function is used when the user intends to run multiple searches over a broad area of interest. It queries the DAACs (ASF search and HLS search) for all available sensors in this package, processes duplicate search results appropriately, then sorts and returns the results as a GeoPandas dataframe. An example function call is:
 
@@ -66,6 +66,8 @@ where all_sensors_df is the GeoDataFrame with all sensor acquisitions, sensor_li
 To display the heatmap, one can specify <code>column='av_cad_days',legend=True,legend_kwds={'label': "Sensor cadence (# of days)"}</code> for the plot to include cadence as a colorbar. An example plot is shown below:
 
 <img width="604" alt="Screen Shot 2022-11-10 at 9 00 24 AM" src="https://user-images.githubusercontent.com/48765984/201159134-9304f545-6506-49b6-9672-222eb17b2425.png">
+
+The plotting procedure can be seen in [2_Filter_Plot.ipynb](https://github.com/OPERA-Cal-Val/opera_coverage/blob/main/global_temporal_sampling_analysis/2_Filter_Plot.ipynb)
 
 # Known issues
 
