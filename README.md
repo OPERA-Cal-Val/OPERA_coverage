@@ -6,9 +6,11 @@ Users can calculate spatial-temporal coverage of sensors used as input datasets 
 # Installation
 
 ```
+git clone https://github.com/angelviolinist/opera_coverage.git
 conda env update -f environment.yml
 conda activate opera_coverage
 python -m ipykernel install --user --name opera_coverage
+pip install .
 ```
 
 # Usage
