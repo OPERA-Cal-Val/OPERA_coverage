@@ -28,7 +28,7 @@ where sensor_list is a list with any number of sensors from ['sentinel1','sentin
 
 Please refer to notebooks/Basic Demo.ipynb for an example workflow of the below two functions.
 
-## get_area_coverage
+<!-- ## get_area_coverage
 
 This function is used when the user intends to run multiple searches over a broad area of interest. It queries the DAACs (ASF search and HLS search) for all available sensors in this package, processes duplicate search results appropriately, then sorts and returns the results as a GeoPandas dataframe. An example function call is:
 
@@ -57,7 +57,7 @@ After running get_boxes, results from specific sensors can be filtered out by ca
 ```
 df = separate_sensors(all_sensors_df, sensor_list)
 ```
-where all_sensors_df is the GeoDataFrame with all sensor acquisitions, sensor_list is the list of sensors the user wants results for, and df is the GeoDataFrame output with only acquisitions from those sensors.
+where all_sensors_df is the GeoDataFrame with all sensor acquisitions, sensor_list is the list of sensors the user wants results for, and df is the GeoDataFrame output with only acquisitions from those sensors. -->
 
 ## Plotting
 

@@ -8,7 +8,7 @@ import pandas as pd
 import geopandas as gpd
 
 def hls_search(sensor: str, aoi: Polygon, date: List[datetime] = None) -> list:
-    """For searching for sentinel2 and landsat8 data
+    """For searching for sentinel2 and landsat8_9 data
 
     Args:
         sensor (str): singular sensor name, can be 'landsat8' or 'sentinel2'
