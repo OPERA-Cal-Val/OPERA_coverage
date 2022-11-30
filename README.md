@@ -1,4 +1,4 @@
-# Opera_coverage
+# OPERA_coverage
 
 Users can calculate spatial-temporal coverage of sensors used as input datasets for OPERA products. Outputs are formatted as a GeoPandas dataframes and can be plotted as a heatmap on a crs='EPSG:4326' world map.
 
